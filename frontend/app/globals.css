@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary:        #ee4d2d;
+  --primary-dark:   #d73211;
+  --primary-light:  #fff2ef;
+  --primary-hover:  #f05d40;
+  --secondary:      #ff7337;
+  --bg:             #f5f5f5;
+  --card:           #ffffff;
+  --text:           #333333;
+  --text-muted:     #757575;
+  --border:         #e8e8e8;
+  --success:        #26aa99;
+  --warning:        #f80;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary:       var(--primary);
+  --color-primary-dark:  var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-bg:            var(--bg);
+  --color-card:          var(--card);
+  --color-shopee-orange: #ee4d2d;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Roboto', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* Flash sale countdown block */
+.countdown-block {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #ee4d2d;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: 3px;
+  padding: 1px 5px;
+  min-width: 24px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Shopee-style card hover */
+.auction-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.auction-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+/* Orange gradient for flash sale banners */
+.flash-banner {
+  background: linear-gradient(135deg, #ee4d2d 0%, #ff7337 100%);
+}
+
+/* Shopee-like navbar gradient */
+.navbar-gradient {
+  background: linear-gradient(to bottom, #f53d2d, #f63);
+}
+
+/* Price styling */
+.price-main {
+  color: #ee4d2d;
+  font-weight: 700;
+}
+
+/* Badge */
+.badge-hot {
+  background: #ee4d2d;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-ending {
+  background: #f80;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Scrollbar minimal */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #aaa; }
